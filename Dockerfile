@@ -8,7 +8,7 @@ RUN chmod 0644 /etc/cron.d/cronjobs && touch /var/log/cron.log
 
 RUN crontab /etc/cron.d/cronjobs
 
-RUN pecl install redis && docker-php-ext-enable redis
+RUN pecl install redis && pecl install zip && pecl install mbstring && pecl install curl && docker-php-ext-enable redis
 
 ADD entrypoint.sh /etc/entrypoint.sh
 
