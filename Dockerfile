@@ -12,10 +12,6 @@ RUN pecl install redis && docker-php-ext-enable redis
 
 RUN pecl install zip && docker-php-ext-enable zip
 
-RUN pecl install mbstring && docker-php-ext-enable mbstring
-
-RUN pecl install curl && docker-php-ext-enable curl
-
 ADD entrypoint.sh /etc/entrypoint.sh
 
 RUN chmod u+x /etc/entrypoint.sh
