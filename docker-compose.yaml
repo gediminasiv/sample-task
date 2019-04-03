@@ -1,0 +1,25 @@
+version: '2'
+services:
+  app:
+    image: nginx:latest
+    ports:
+     - "8080:81"
+    volumes:
+     - ./app:/app
+     - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+     - php
+
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+    links:
+      - redis
+
+  redis:
+    image: redis:5

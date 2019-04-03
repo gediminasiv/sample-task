@@ -1,0 +1,1 @@
+* * * * * php /app/bin/console update:harbors && php /app/bin/console update:weather >> /var/log/cron.log 2>&1

@@ -1,0 +1,23 @@
+eight_points_guzzle:
+    clients:
+        harba_dev:
+            class: App\Client\HarbaDevClient
+            base_url: "https://devapi.harba.co"
+            options:
+                timeout: 30
+                http_errors: true
+                headers:
+                    User-Agent: "EightPointsGuzzleBundle/v7"
+            plugin: ~
+
+        weather_main:
+            class: App\Client\OpenWeatherClient
+            base_url: "https://api.openweathermap.org"
+            options:
+                timeout: 30
+                http_errors: true
+                headers:
+                    User-Agent: "EightPointsGuzzleBundle/v7"
+            plugin: ~
+
+
